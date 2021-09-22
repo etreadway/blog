@@ -1,20 +1,22 @@
+import { Post } from "./Post";
+
 const posts = [
   {
     id: 0,
     title: "This Is My Blog Post Title",
-    content: "This is the time, date, etc... of the post.",
+    content: "This is the thing I want to blog about.",
+    date: "09/22/21",
+  },
+  {
+    id: 1,
+    title: "Another Title",
+    content: "This is something else I want to blog about.",
     date: "09/22/21",
   },
 ];
 
+const postList = posts.map((post) => <Post value={post} />);
+
 export const Posts = () => {
-  return (
-    <div>
-      <h1>{posts[0].title}</h1>
-      <h5>
-        Post: #{posts[0].id + 1} --- Published: {posts[0].date}
-      </h5>
-      <p>{posts[0].content}</p>
-    </div>
-  );
+  return <div>{postList}</div>;
 };

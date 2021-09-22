@@ -1,6 +1,6 @@
 import { Post } from "./Post";
 
-const posts = [
+const DUMMY_POSTS = [
   {
     id: 0,
     title: "This Is My Blog Post Title",
@@ -15,7 +15,7 @@ const posts = [
   },
 ];
 
-const postList = posts.map((post) => <Post value={post} />);
+const postList = DUMMY_POSTS.map((post) => <Post value={post} />);
 
 export const Posts = () => {
   return <div>{postList}</div>;

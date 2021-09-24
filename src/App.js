@@ -1,12 +1,13 @@
 import "./App.css";
 import { Posts } from "./components/Posts";
+import { Wrapper } from "./style/Wrapper";
 
 function App() {
   return (
-    <div className="App">
+    <Wrapper>
       <h1>Hello from my blog!</h1>
       <Posts />
-    </div>
+    </Wrapper>
   );
 }
 

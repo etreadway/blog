@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export const PostContext = createContext();
 
@@ -23,8 +23,11 @@ export const PostProvider = (props) => {
       date: "09/24/21",
     },
   ];
+
+  const [blogPosts, setBlogPosts] = useState(DUMMY_POSTS);
+
   return (
-    <PostContext.Provider value={DUMMY_POSTS}>
+    <PostContext.Provider value={{ blogPosts, setBlogPosts }}>
       {props.children}
     </PostContext.Provider>
   );

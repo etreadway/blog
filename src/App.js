@@ -1,10 +1,10 @@
 import "./App.css";
 import { Posts } from "./components/Posts";
-import { PostProvider } from "./context/PostsContext";
+import { PostProvider } from "./context/PostContext";
 import { Wrapper } from "./style/Wrapper";
 import { NewPost } from "./components/NewPost";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
   return (
     <Router>

@@ -12,7 +12,13 @@ export const NewPost = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(input);
+
+    const newBlogPostList = [
+      ...blogPosts,
+      { id: blogPosts.length, title: "TBD", content: input, date: "now" },
+    ];
+    setBlogPosts(newBlogPostList);
+    console.log(blogPosts);
   };
 
   return (

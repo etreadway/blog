@@ -16,7 +16,6 @@ const client = new Client({
 client.connect();
 
 app.get("/", (req, res) => {
-  console.log(process.env);
   client.query(`SELECT * FROM posts`, (err, data) => {
     res.send(data.rows);
   });

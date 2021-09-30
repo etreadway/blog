@@ -1,8 +1,22 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const PostContext = createContext();
 
 export const PostProvider = (props) => {
+  const makeAPICall = async () => {
+    try {
+      const response = await fetch("http://localhost:5000", { mode: "cors" });
+      const data = await response.json();
+      console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    makeAPICall();
+  }, []);
+
   const DUMMY_POSTS = [
     {
       id: 0,

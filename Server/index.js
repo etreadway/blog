@@ -16,6 +16,7 @@ const client = new Client({
 client.connect();
 
 app.get("/", (req, res) => {
+  res.set("Access-Control-Allow-Origin", "*");
   client.query(`SELECT * FROM posts`, (err, data) => {
     res.send(data.rows);
   });

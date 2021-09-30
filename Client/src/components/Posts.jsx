@@ -3,9 +3,11 @@ import { useContext } from "react";
 import { PostContext } from "../context/PostContext";
 
 export const Posts = () => {
-  const { blogPosts } = useContext(PostContext);
+  const { blogPosts, realPosts } = useContext(PostContext);
 
-  const postList = blogPosts.map((post) => <Post value={post} />);
+  console.log("hello from posts", realPosts);
+
+  const postList = realPosts.map((post) => <Post value={post} />);
 
   return <div>{postList}</div>;
 };

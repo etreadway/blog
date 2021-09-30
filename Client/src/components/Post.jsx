@@ -6,9 +6,9 @@ export const Post = (props) => {
     <Card>
       <h1>{props.value.title}</h1>
       <h5>
-        Post: #{props.value.id + 1} --- Published: {props.value.date}
+        Post: #{props.value.post_id} --- Published: {props.value.created_on}
       </h5>
-      <p>{props.value.content}</p>
+      <p>{props.value.post_content}</p>
     </Card>
   );
 };

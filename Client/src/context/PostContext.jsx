@@ -3,11 +3,13 @@ import { createContext, useState, useEffect } from "react";
 export const PostContext = createContext();
 
 export const PostProvider = (props) => {
+  const [realPosts, setRealPosts] = useState([]);
+
   const makeAPICall = async () => {
     try {
       const response = await fetch("http://localhost:5000", { mode: "cors" });
       const data = await response.json();
-      console.log(data);
+      setRealPosts(data);
     } catch (e) {
       console.log(e);
     }
@@ -41,7 +43,7 @@ export const PostProvider = (props) => {
   const [blogPosts, setBlogPosts] = useState(DUMMY_POSTS);
 
   return (
-    <PostContext.Provider value={{ blogPosts, setBlogPosts }}>
+    <PostContext.Provider value={{ blogPosts, setBlogPosts, realPosts }}>
       {props.children}
     </PostContext.Provider>
   );
